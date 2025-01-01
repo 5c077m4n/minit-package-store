@@ -8,6 +8,8 @@ os="${MINIT_BUILD_OS:-"macos"}"
 mkdir -p "$workdir"
 cd "$workdir" || exit 1
 
+apt update && apt install --yes curl
+
 file_name="nvim-${os}-${arch}.tar.gz"
 curl --remote-name "https://github.com/neovim/neovim/releases/download/${version}/${file_name}"
 
