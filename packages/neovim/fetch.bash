@@ -25,5 +25,6 @@ stat "$file_name"
 # TODO: consider moving the sha256sums to repo
 curl --remote-name "${file_url}.sha256sum"
 stat "${file_name}.sha256sum"
+cat "${file_name}.sha256sum"
 
 sha256sum --check --status "${file_name}.sha256sum" || exit 1
