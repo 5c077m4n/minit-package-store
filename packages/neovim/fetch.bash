@@ -18,7 +18,10 @@ apt update && apt install --yes curl
 file_name="nvim-${os}-${arch}.tar.gz"
 file_url="https://github.com/neovim/neovim/releases/download/${version}/${file_name}"
 curl --remote-name "$file_url"
+file "$file_url"
 
 # TODO: consider moving the sha256sums to repo
 curl --remote-name "${file_url}.sha256sum"
+cat "${file_url}.sha256sum"
+
 sha256sum --check --status "${file_name}.sha256sum" || exit 1
