@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euxo pipefail
+
 workdir="${MINIT_BUILD_WORKDIR:-"/app/build"}"
 version="${MINIT_BUILD_VERSION:-"v0.10.3"}"
 arch="${MINIT_BUILD_ARCH:-"$(arch)"}"
